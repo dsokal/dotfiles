@@ -1,3 +1,8 @@
 [user]
 	name = Dominik Sokal
 	email = dominiksokal@gmail.com
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	br = branch
