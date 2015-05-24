@@ -2,6 +2,7 @@
 
 - link:
     ~/.gitconfig: .gitconfig
+    ~/.tmux.conf: tmux.conf
     ~/.zprezto: prezto
     ~/.zlogin: prezto/runcoms/zlogin
     ~/.zlogout: prezto/runcoms/zlogout
