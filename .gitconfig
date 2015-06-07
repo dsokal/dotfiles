@@ -6,3 +6,5 @@
 	st = status
 	ci = commit
 	br = branch
+[core]
+	excludesfile = /home/dsokal/.gitignore
