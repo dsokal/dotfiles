@@ -2,7 +2,7 @@
 
 - link:
     ~/.gitconfig: .gitconfig
-    ~/.gitignore: .gitignore
+    ~/.gitignore: .gitignore_global
     ~/.tmux.conf: tmux.conf
     ~/.zprezto: prezto
     ~/.zlogin: prezto/runcoms/zlogin
