@@ -5,3 +5,4 @@ source ~/.zprezto/runcoms/zshrc
 
 alias open_ports='netstat -lnptu'
 
+[[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
