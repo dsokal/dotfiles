@@ -8,4 +8,4 @@
 	br = branch
 	dc = diff --cached
 [core]
-	excludesfile = /home/dsokal/.gitignore
+	excludesfile = ~/.gitignore
