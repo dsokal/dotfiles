@@ -9,3 +9,6 @@
 	dc = diff --cached
 [core]
 	excludesfile = ~/.gitignore
+
+[include]
+	path = ~/.dotfiles/gitconfig.local

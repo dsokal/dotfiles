@@ -1,8 +1,8 @@
 - clean: ['~']
 
 - link:
-    ~/.gitconfig: .gitconfig
-    ~/.gitignore: .gitignore_global
+    ~/.gitconfig: gitconfig
+    ~/.gitignore: gitignore_global
     ~/.tmux.conf: tmux.conf
     ~/.zprezto: prezto
     ~/.zlogin: prezto/runcoms/zlogin
