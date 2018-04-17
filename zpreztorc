@@ -13,4 +13,4 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'tmux'
 
-zstyle ':prezto:module:prompt' theme 'paradox'
+zstyle ':prezto:module:prompt' theme 'agnoster'
