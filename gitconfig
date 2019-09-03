@@ -10,6 +10,10 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore
-
+	editor = vim
 [include]
 	path = ~/.dotfiles/gitconfig.local
+[status]
+	submoduleSummary = true
+[merge]
+	conflictstyle = diff3
