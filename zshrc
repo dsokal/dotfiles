@@ -1,5 +1,7 @@
 source ~/.zprezto/runcoms/zshrc
 
+unsetopt nomatch
+
 [[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
 
 if [[ -z "$DOTFILES_DONT_LOAD_NVM" ]]; then
@@ -12,3 +14,4 @@ fi
 
 alias open_ports='lsof -i -P | grep -i "listen"'
 alias cat='ccat'
+alias enable_rvm='source ~/.rvm/scripts/rvm'
