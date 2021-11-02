@@ -24,3 +24,5 @@
 	smudge = git-lfs smudge -- %f
 [push]
 	default = current
+[pull]
+	rebase = true
