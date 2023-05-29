@@ -1,8 +1,24 @@
 source ~/.zprezto/runcoms/zshrc
 
+path_append() {
+  ARG="$1"
+  if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+    export PATH="${PATH:+"$PATH:"}$ARG"
+  fi
+}
+
+path_prepend() {
+  ARG="$1"
+  if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+    export PATH="$ARG${PATH:+":$PATH"}"
+  fi
+}
+
 unsetopt nomatch
 
 [[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [[ -z "$DOTFILES_DONT_LOAD_NVM" ]]; then
   export NVM_DIR="$HOME/.nvm"
@@ -14,4 +30,5 @@ fi
 
 alias open_ports='lsof -i -P | grep -i "listen"'
 alias cat='ccat'
-alias enable_rvm='source ~/.rvm/scripts/rvm'
+alias show_path='echo "$PATH" | tr ":" "\n" | nl'
+alias cgrep="grep --color=always"
