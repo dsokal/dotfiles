@@ -1,4 +1,4 @@
-source ~/.zprezto/runcoms/zshrc
+# source ~/.zprezto/runcoms/zshrc
 
 path_append() {
   ARG="$1"
@@ -25,6 +25,12 @@ case "${unameOut}" in
     MSYS_NT*)   machine=Git;;
     *)          machine="UNKNOWN:${unameOut}"
 esac
+
+export ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="agnoster"
+
+plugins=(brew git history zsh-navigation-tools zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 
 if [[ "$machine" = "Mac" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
