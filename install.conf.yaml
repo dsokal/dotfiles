@@ -7,13 +7,8 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore_global
     ~/.tmux.conf: tmux.conf
-    ~/.zprezto: prezto
-    ~/.zlogin: prezto/runcoms/zlogin
-    ~/.zlogout: prezto/runcoms/zlogout
-    ~/.zpreztorc: zpreztorc
-    ~/.zprofile: prezto/runcoms/zprofile
-    ~/.zshenv: prezto/runcoms/zshenv
     ~/.zshrc:
       force: true
       path: zshrc
     ~/.oh-my-zsh: oh-my-zsh
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting

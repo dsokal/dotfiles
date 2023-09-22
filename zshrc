@@ -29,8 +29,7 @@ esac
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
-# zsh-completions zsh-syntax-highlighting
-plugins=(brew git history)
+plugins=(brew git history zsh-syntax-highlighting history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 if [[ "$machine" = "Mac" ]]; then
