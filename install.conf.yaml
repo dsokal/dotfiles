@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.gitconfig: gitconfig
@@ -10,7 +10,10 @@
     ~/.zpreztorc: zpreztorc
     ~/.zprofile: prezto/runcoms/zprofile
     ~/.zshenv: prezto/runcoms/zshenv
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    ~/.oh-my-zsh: oh-my-zsh
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
