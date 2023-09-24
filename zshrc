@@ -37,7 +37,6 @@ if [[ "$machine" = "Mac" ]]; then
 fi
 
 alias open_ports='lsof -i -P | grep -i "listen"'
-alias cat='pygmentize -g'
 alias show_path='echo "$PATH" | tr ":" "\n" | nl'
 alias cgrep="grep --color=always"
 
