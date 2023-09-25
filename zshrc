@@ -41,7 +41,7 @@ alias show_path='echo "$PATH" | tr ":" "\n" | nl'
 alias cgrep="grep --color=always"
 
 export VOLTA_HOME="$HOME/.volta"
-path_prepend "$VOLTA_HOME/bin:$PATH"
+path_prepend $VOLTA_HOME/bin
 
 # Keep as last command in file
 [[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
