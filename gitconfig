@@ -26,3 +26,5 @@
 	default = current
 [pull]
 	rebase = true
+[commit]
+	gpgsign = true
