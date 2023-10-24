@@ -45,5 +45,9 @@ alias cgrep="grep --color=always"
 export VOLTA_HOME="$HOME/.volta"
 path_prepend $VOLTA_HOME/bin
 
+if [[ "$machine" = "Linux" ]]; then
+  source ~/.dotfiles/zshrc_linux
+fi
+
 # !!! Keep as last command in file !!!
 [[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local

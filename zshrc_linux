@@ -1,0 +1,14 @@
+# gsettings set org.gnome.mutter overlay-key ''
+# gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
+# gsettings set org.gnome.mutter center-new-windows true
+
+[[ -s "$HOME/idea/bin" ]] && path_append "$HOME/idea/bin"
+
+eval `dircolors $HOME/.dir_colors/dircolors`
+
+# Toshy (https://github.com/RedBearAK/toshy)
+path_append "$HOME/.local/bin"
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

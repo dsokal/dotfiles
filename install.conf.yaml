@@ -2,6 +2,16 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - description: Ask to install toshy on Linux
+      stdout: true
+      quiet: true
+      command: |
+        if [[ "`uname`" = "Linux" ]]; then
+          YELLOW='\033[1;33m'
+          NC='\033[0m' # No Color
+          echo -e "${YELLOW}Install toshy!${NC}"
+          echo -e "${YELLOW}Read instructions on https://github.com/RedBearAK/toshy#how-to-install${NC}"
+        fi
 
 - link:
     ~/.gitconfig: gitconfig
@@ -12,3 +22,8 @@
       path: zshrc
     ~/.oh-my-zsh: oh-my-zsh
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh-syntax-highlighting
+    ~/.config/toshy/toshy_config.py:
+      create: true
+      force: true
+      path: toshy/toshy_config.py
+      if: '[[ "`uname`" = "Linux" ]]'
