@@ -1,5 +1,3 @@
-# source ~/.zprezto/runcoms/zshrc
-
 path_append() {
   ARG="$1"
   if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
