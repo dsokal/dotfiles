@@ -34,6 +34,8 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ "$machine" = "Mac" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ "$machine" = "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 alias open_ports='lsof -i -P | grep -i "listen"'
@@ -43,5 +45,5 @@ alias cgrep="grep --color=always"
 export VOLTA_HOME="$HOME/.volta"
 path_prepend $VOLTA_HOME/bin
 
-# Keep as last command in file
+# !!! Keep as last command in file !!!
 [[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
