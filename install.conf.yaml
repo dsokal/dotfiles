@@ -2,7 +2,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - description: Ask to install toshy on Linux
+    - description: "[Linux] Ask to install toshy"
       stdout: true
       quiet: true
       command: |
@@ -11,8 +11,21 @@
           NC='\033[0m' # No Color
           echo -e "${YELLOW}Install toshy!${NC}"
           echo -e "${YELLOW}Read instructions on https://github.com/RedBearAK/toshy#how-to-install${NC}"
+        else
+          echo "Skipping..."
         fi
+    - description: "[Linux] Install gnome-terminal profiles"
+      stdout: true
+      quiet: true
+      command: |
+        if [[ "`uname`" = "Linux" ]]; then
+          # export with:
+          # $ dconf dump /org/gnome/terminal/legacy/profiles:/ > config/gnome-terminal-profiles.dconf
 
+          dconf load /org/gnome/terminal/legacy/profiles:/ < config/gnome-terminal-profiles.dconf
+        else
+          echo "Skipping..."
+        fi
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore_global
@@ -25,5 +38,5 @@
     ~/.config/toshy/toshy_config.py:
       create: true
       force: true
-      path: toshy/toshy_config.py
+      path: config/toshy_config.py
       if: '[[ "`uname`" = "Linux" ]]'
