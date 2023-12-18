@@ -3235,6 +3235,8 @@ keymap("Jetbrains", {
     C("C-Alt-o"):               C("C-Alt-Shift-n"),             # Go to symbol
     C("Super-Right"):           C("Alt-Right"),                 # Go to next editor tab
     C("Super-Left"):            C("Alt-Left"),                  # Go to previous editor tab
+    C("Shift-RC-Right_Brace"):  C("Alt-Right"),                 # Go to next editor tab
+    C("Shift-RC-Left_Brace"):   C("Alt-Left"),                  # Go to previous editor tab
     C("C-l"):                   C("C-g"),                       # Go to line
     C("Alt-Space"):             C("C-Shift-i"),                 # Open quick definition lookup
     C("C-Y"):                   C("C-Shift-i"),                 # Open quick definition lookup
