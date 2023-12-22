@@ -41,11 +41,15 @@ alias show_path='echo "$PATH" | tr ":" "\n" | nl'
 alias cgrep="grep --color=always"
 
 export VOLTA_HOME="$HOME/.volta"
-path_prepend $VOLTA_HOME/bin
+if [ -d "$VOLTA_HOME" ]; then
+  path_prepend $VOLTA_HOME/bin
+else
+  echo "Install volta!"
+fi
 
 if [[ "$machine" = "Linux" ]]; then
   source ~/.dotfiles/zshrc_linux
 fi
 
 # !!! Keep as last command in file !!!
-[[ -s ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local
+[[ -f ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local || true
