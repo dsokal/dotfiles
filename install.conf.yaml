@@ -56,6 +56,16 @@
         else
           echo "Skipping..."
         fi
+    - description: "[MacOS] Create Sublime Text symlink"
+      stdout: true
+      stdin: true
+      quiet: true
+      command: |
+        if [[ "`uname`" = "Darwin" && -f /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl && ! -f /usr/local/bin/subl ]]; then
+          sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+        else
+          echo "Skipping..."
+        fi
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore_global
