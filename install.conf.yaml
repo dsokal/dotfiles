@@ -26,6 +26,36 @@
         else
           echo "Skipping..."
         fi
+    - description: "[MacOS] Install Homebrew"
+      stdout: true
+      stdin: true
+      quiet: true
+      command: |
+        if [[ "`uname`" = "Darwin" && ! "$(command -v brew)" ]]; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        else
+          echo "Skipping..."
+        fi
+    - description: "[MacOS] Install Homebrew packages"
+      stdout: true
+      quiet: true
+      command: |
+        # TODO: Linux
+        if [[ "`uname`" = "Darwin" ]]; then
+          brew install tmux gnupg jq
+        else
+          echo "Skipping..."
+        fi
+    - description: "[All] Install volta"
+      stdout: true
+      quiet: true
+      command: |
+        if [[ ! "$(command -v volta)" ]]; then
+          curl https://get.volta.sh | bash
+          git checkout -- zshrc
+        else
+          echo "Skipping..."
+        fi
 - link:
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore_global

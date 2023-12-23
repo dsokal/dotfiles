@@ -44,7 +44,7 @@ export VOLTA_HOME="$HOME/.volta"
 if [ -d "$VOLTA_HOME" ]; then
   path_prepend $VOLTA_HOME/bin
 else
-  echo "Install volta!"
+  echo "Run ./install to install volta"
 fi
 
 if [[ "$machine" = "Linux" ]]; then

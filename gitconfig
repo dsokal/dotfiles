@@ -12,7 +12,7 @@
 	excludesfile = ~/.gitignore
 	editor = subl -n -w
 [include]
-	path = ~/.dotfiles/gitconfig.local
+	path = ~/.dotfiles/gitconfig_local
 [status]
 	submoduleSummary = true
 [merge]
