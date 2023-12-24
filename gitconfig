@@ -1,30 +1,30 @@
 [user]
-	name = Dominik Sokal
-	email = dominik@sokal.dev
+  name = Dominik Sokal
+  email = dominiksokal@gmail.com
 [alias]
-	co = checkout
-	st = status
-	ci = commit
-	br = branch
-	dc = diff --cached
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  co = checkout
+  st = status
+  ci = commit
+  br = branch
+  dc = diff --cached
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-	excludesfile = ~/.gitignore
-	editor = subl -n -w
+  excludesfile = ~/.gitignore
+  editor = subl -n -w
 [include]
-	path = ~/.dotfiles/gitconfig_local
+  path = ~/.dotfiles/gitconfig_local
 [status]
-	submoduleSummary = true
+  submoduleSummary = true
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [push]
-	default = current
+  default = current
 [pull]
-	rebase = true
+  rebase = true
 [commit]
-	gpgsign = true
+  gpgsign = true
