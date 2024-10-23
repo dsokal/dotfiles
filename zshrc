@@ -47,6 +47,11 @@ else
   echo "Run ./install to install volta"
 fi
 
+HOMEDIR_BIN="$HOME/bin"
+if [ -d "$HOMEDIR_BIN" ]; then
+  path_append $HOMEDIR_BIN
+fi
+
 if [[ "$machine" = "Linux" ]]; then
   source ~/.dotfiles/zshrc_linux
 fi
