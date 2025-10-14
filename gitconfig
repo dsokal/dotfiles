@@ -10,7 +10,7 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
   excludesfile = ~/.gitignore
-  editor = cursor --wait --new-window
+  editor = subl -n -w
 [include]
   path = ~/.dotfiles/gitconfig_local
 [status]
