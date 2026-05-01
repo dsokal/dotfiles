@@ -53,9 +53,20 @@ if [ -d "$HOMEDIR_BIN" ]; then
   path_append $HOMEDIR_BIN
 fi
 
+# for claude
+HOMEDIR_LOCAL_BIN="$HOME/.local/bin"
+if [ -d "$HOMEDIR_LOCAL_BIN" ]; then
+  path_append $HOMEDIR_LOCAL_BIN
+fi
+
+
 if [[ "$machine" = "Linux" ]]; then
   source ~/.dotfiles/zshrc_linux
 fi
+
+# for vscode integrated terminal
+bindkey '\e[1;3C' forward-word
+bindkey '\e[1;3D' backward-word
 
 # !!! Keep as last command in file !!!
 [[ -f ~/.dotfiles/zshrc_local ]] && source ~/.dotfiles/zshrc_local || true
