@@ -85,3 +85,4 @@
       force: true
       path: config/toshy_config.py
       if: '[[ "`uname`" = "Linux" ]]'
+    ~/.ssh/config: ssh_config
