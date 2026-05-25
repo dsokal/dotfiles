@@ -11,8 +11,6 @@
 [core]
   excludesfile = ~/.gitignore
   editor = subl -n -w
-[include]
-  path = ~/.dotfiles/gitconfig_local
 [status]
   submoduleSummary = true
 [merge]
@@ -28,3 +26,5 @@
   rebase = true
 [commit]
   gpgsign = true
+[include]
+  path = ~/.dotfiles/gitconfig_local
