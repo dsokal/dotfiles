@@ -46,7 +46,7 @@
       command: |
         # TODO: Linux
         if [[ "`uname`" = "Darwin" ]]; then
-          brew install tmux gnupg jq pinentry-mac
+          brew install tmux gnupg jq pinentry-mac rg fd eza gh
           grep -qxF 'pinentry-program /opt/homebrew/bin/pinentry-mac' ~/.gnupg/gpg-agent.conf || echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
         else
           echo "Skipping..."
