@@ -39,7 +39,7 @@ fi
 alias open_ports='lsof -i -P | grep -i "listen"'
 alias show_path='echo "$PATH" | tr ":" "\n" | nl'
 alias cgrep="grep --color=always"
-alias last_boots="cat /var/log/system.log | grep boot | tail -n 10"
+alias when_did_i_start='pmset -g log | grep "Display is turned on" | tail -15'
 
 export VOLTA_HOME="$HOME/.volta"
 if [ -d "$VOLTA_HOME" ]; then
