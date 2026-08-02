@@ -1,6 +1,6 @@
 # dotfiles
 
-- `git clone git@github.com:dsokal/dotfiles.git .dotfile`
+- `git clone git@github.com:dsokal/dotfiles.git .dotfiles`
 - `cd .dotfiles && ./install`.
 - Manual steps:
   - Install [GPG Suite](https://gpgtools.org/), import GPG keys, and optionally set matching email in `gitconfig_local`.
