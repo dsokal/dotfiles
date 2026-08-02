@@ -47,6 +47,8 @@
         # TODO: Linux
         if [[ "`uname`" = "Darwin" ]]; then
           brew install tmux gnupg jq pinentry-mac rg fd eza gh
+          mkdir -p ~/.gnupg
+          chmod 700 ~/.gnupg
           grep -qxF 'pinentry-program /opt/homebrew/bin/pinentry-mac' ~/.gnupg/gpg-agent.conf || echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
         else
           echo "Skipping..."
@@ -67,6 +69,10 @@
       quiet: true
       command: |
         if [[ "`uname`" = "Darwin" && -f /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl && ! -f /usr/local/bin/subl ]]; then
+          if [ ! -d "/usr/local/bin" ]; then
+            echo "Creating /usr/local/bin directory..."
+            sudo mkdir -p /usr/local/bin
+          fi
           sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
         else
           echo "Skipping..."
