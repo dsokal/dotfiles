@@ -39,7 +39,17 @@ fi
 alias open_ports='lsof -i -P | grep -i "listen"'
 alias show_path='echo "$PATH" | tr ":" "\n" | nl'
 alias cgrep="grep --color=always"
-alias when_did_i_start='pmset -g log | grep "Display is turned on" | tail -15'
+when_did_i_start() {
+  local today start elapsed
+  today=$(date +%Y-%m-%d)
+  start=$(pmset -g log | grep "Display is turned on" | grep "^$today" | head -1 | cut -d' ' -f1,2)
+  if [ -z "$start" ]; then
+    echo "No display wake logged today ($today)"
+    return 1
+  fi
+  elapsed=$(( $(date +%s) - $(date -j -f "%Y-%m-%d %H:%M:%S" "$start" +%s) ))
+  printf 'Started: %s\nElapsed: %dh %02dm\n' "${start#* }" $((elapsed / 3600)) $((elapsed % 3600 / 60))
+}
 
 export VOLTA_HOME="$HOME/.volta"
 if [ -d "$VOLTA_HOME" ]; then
