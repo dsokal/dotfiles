@@ -7,9 +7,9 @@ path_append() {
 
 path_prepend() {
   ARG="$1"
-  if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
-    export PATH="$ARG${PATH:+":$PATH"}"
-  fi
+  [ -d "$ARG" ] || return
+  path=("$ARG" ${path:#$ARG}) # zsh: drop existing occurrence, then prepend
+  export PATH
 }
 
 unsetopt nomatch
