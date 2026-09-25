@@ -46,7 +46,7 @@
       command: |
         # TODO: Linux
         if [[ "`uname`" = "Darwin" ]]; then
-          brew install tmux gnupg jq pinentry-mac rg fd eza gh
+          brew install tmux gnupg jq pinentry-mac rg fd eza gh terminal-notifier
           mkdir -p ~/.gnupg
           chmod 700 ~/.gnupg
           grep -qxF 'pinentry-program /opt/homebrew/bin/pinentry-mac' ~/.gnupg/gpg-agent.conf || echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf
@@ -92,3 +92,19 @@
       path: config/toshy_config.py
       if: '[[ "`uname`" = "Linux" ]]'
     ~/.ssh/config: ssh_config
+    ~/.claude/hooks/notify.sh:
+      create: true
+      force: true
+      path: claude/hooks/notify.sh
+      if: '[[ "`uname`" = "Darwin" ]]'
+
+- shell:
+    - description: "[MacOS] Set up Claude Code notifications"
+      stdout: true
+      quiet: true
+      command: |
+        if [[ "`uname`" = "Darwin" ]]; then
+          ./claude/install.sh
+        else
+          echo "Skipping..."
+        fi
