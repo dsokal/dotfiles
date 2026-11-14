@@ -53,13 +53,12 @@
         else
           echo "Skipping..."
         fi
-    - description: "[All] Install volta"
+    - description: "[All] Install mise"
       stdout: true
       quiet: true
       command: |
-        if [[ ! "$(command -v volta)" ]]; then
-          curl https://get.volta.sh | bash
-          git checkout -- zshrc
+        if [[ ! "$(command -v mise)" ]]; then
+          curl -fsSL https://mise.run | sh
         else
           echo "Skipping..."
         fi

@@ -1,3 +1,6 @@
+# loads configuration
+. ~/.dotfiles/config/env.sh
+
 path_append() {
   ARG="$1"
   if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
@@ -51,12 +54,17 @@ when_did_i_start() {
   printf 'Started: %s\nElapsed: %dh %02dm\n' "${start#* }" $((elapsed / 3600)) $((elapsed % 3600 / 60))
 }
 
-export VOLTA_HOME="$HOME/.volta"
-if [ -d "$VOLTA_HOME" ]; then
-  path_prepend $VOLTA_HOME/bin
+if [[ "$USE_VOLTA" = "1" ]]; then
+  export VOLTA_HOME="$HOME/.volta"
+  if [ -d "$VOLTA_HOME" ]; then
+    path_prepend $VOLTA_HOME/bin
+  else
+    echo "Run ./install to install volta"
+  fi
 else
-  echo "Run ./install to install volta"
+  eval "$(~/.local/bin/mise activate zsh)"
 fi
+
 
 HOMEDIR_BIN="$HOME/bin"
 if [ -d "$HOMEDIR_BIN" ]; then
