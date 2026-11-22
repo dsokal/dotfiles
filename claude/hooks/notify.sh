@@ -1,6 +1,11 @@
 #!/bin/bash
 # Claude Code notification hook: shows chat title + project in a macOS notification.
 input=$(cat)
+here=$(dirname "$(readlink "$0" || echo "$0")")
+
+# Off unless this machine opts in via claude_local (gitignored, see claude_local_example).
+[[ -f "$here/../../claude_local" ]] && source "$here/../../claude_local"
+[[ "$CLAUDE_SYSTEM_NOTIFICATIONS" == "1" ]] || exit 0
 
 # The Claude desktop app has its own notifications; don't double them.
 [[ "$CLAUDE_CODE_ENTRYPOINT" == "claude-desktop" ]] && exit 0
@@ -36,7 +41,7 @@ else
 fi
 
 # brew upgrade restores the stock icon; put the Claude one back (no-op when already patched).
-"$(dirname "$(readlink "$0" || echo "$0")")/../terminal-notifier-icon.sh" >/dev/null 2>&1
+"$here/../terminal-notifier-icon.sh" >/dev/null 2>&1
 
 /opt/homebrew/bin/terminal-notifier \
   -title "Claude Code · $project" \

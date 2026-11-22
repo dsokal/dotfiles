@@ -1,0 +1,4 @@
+# Per-machine Claude Code settings. Copy to claude_local (gitignored) and adjust.
+
+# macOS notifications from the Stop/Notification hooks (claude/hooks/notify.sh). Off unless set to 1.
+CLAUDE_SYSTEM_NOTIFICATIONS=1

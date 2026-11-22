@@ -19,6 +19,13 @@ else
   echo "Hooks already in $settings, skipping..."
 fi
 
+# Hooks stay installed everywhere (the hook itself checks the flag); the rest only where enabled.
+[[ -f ../claude_local ]] && source ../claude_local
+if [[ "$CLAUDE_SYSTEM_NOTIFICATIONS" != "1" ]]; then
+  echo "Notifications disabled (set CLAUDE_SYSTEM_NOTIFICATIONS=1 in claude_local to enable), skipping the rest..."
+  exit 0
+fi
+
 ./terminal-notifier-icon.sh
 
 # Alert style lives in a TCC-protected container, so it can't be scripted.
